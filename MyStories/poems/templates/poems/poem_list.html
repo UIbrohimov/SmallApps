@@ -1,0 +1,45 @@
+
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+
+{% block content %}
+<div class="container">
+  <div class="row">
+    <!-- Latest Posts -->
+    <main class="posts-listing col-lg-22"> 
+      <div class="container">
+        <div class="row">
+          <!-- post -->
+          {% for poem in poem %}
+          <div class="post col-lg-4">
+            <div class="post-detail border-0 transform-on-hover">
+                <h5>{{poem.actual_owner}}</h5>
+                <h4 class="poem-title">"{{poem.title}}"</h4>
+              <p class="text-muted poem-text">{{poem.body|linebreaks}}</p>
+              <footer class="post-footer d-flex align-items-center fooem">
+                  
+                  <div class="date meta-last">{{poem.date}} |</div>
+                  <div class="title"><span>Added by: {{poem.author.username}}</span></div>
+                  
+              </footer>
+            </div>
+          </div>
+          {% endfor %}
+          <!-- post             -->
+         
+        <!-- Pagination -->
+        <nav aria-label="Page navigation example">
+          <ul class="pagination pagination-template d-flex justify-content-center">
+      
+          {% include 'pagination.html' with page=page_obj %}
+           
+          </ul>
+        </nav>
+      </div>
+    </main>
+    
+  </div>
+</div>
+
+{% endblock %}

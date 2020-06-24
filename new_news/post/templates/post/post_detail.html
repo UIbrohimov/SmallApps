@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="content">
+    <div class="jumbotron-detail">
+        <img src="{{post.thumb.url}}" width="100%" height="auto">
+        <h2 style="font-family: 'Baloo Bhai', cursive;" style="font-size: 50px;">{{post.title}}</h2>
+        <p style="font-size: 22px; font-family: 'Baloo', cursive;"><b>{{post.body}}</b></p>
+        <p style="font-family: 'Bungee Inline', cursive;">{{post.date}}</p>
+    </div>
+</div>
+
+{% endblock %}

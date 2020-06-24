@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="content">
+    <div class="jumbotron-login">
+        <h1 style="font-family: 'Orbitron', sans-serif;"><b>Log In</b></h1>
+        <!-- action sends the data to the given url -->
+        <form class="site-form" action="{% url 'accounts:login' %}" method="post">
+            {% csrf_token %}
+            {{form.as_p}}
+            {% if request.GET.next %}
+                <input type="hidden" name="next" value="{{request.GET.next}}">
+            {% endif %}
+            <input type="submit" value="Login">
+            <p><a href="{% url 'accounts:signup' %}"><input type="button" value="SignUp"></a></p>
+        </form>
+    </div>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="content">
+    <div class="jumbotron-signup">
+        <h1 style="font-family: 'Orbitron', sans-serif;"><b>Sign Up please!</b></h1>
+
+        <!-- action sends the data to the given url -->
+        <form class="site-form" action="{% url 'accounts:signup' %}" method="post">
+            {% csrf_token %}
+            {{form.as_p}}
+            <input class='sign-me' type="submit" value="SignUp">
+        </form>
+
+    </div>
+</div>
+
+{% endblock %}

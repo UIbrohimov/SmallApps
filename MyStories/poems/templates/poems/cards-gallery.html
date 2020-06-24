@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<section class="gallery-block cards-gallery">
+	    <div class="container">
+	        <div class="heading">
+	          <h2>Company's gallery</h2>
+	        </div>
+	        <div class="row">
+				{% for image in images %}
+	            <div class="col-md-6 col-lg-4">
+	                <div class="card border-0 transform-on-hover">
+	                	<a class="lightbox" href="{{image.thumb.url}}">
+	                		<img src="{{image.thumb.url}}" alt="Card Image" class="card-img-top">
+	                	</a>
+	                    <div class="card-body">
+	                        <h6><a href="#">Added by {{image.author.username}} on {{image.date}}</a></h6>
+	                        <p class="text-muted card-text">{{image.info}}</p>
+	                    </div>
+	                </div>
+				</div>
+				{% endfor %}
+	            {% include 'pagination.html' with page=page_obj %}
+	         </div>
+	    </div>
+</section>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
+<script>
+    baguetteBox.run('.cards-gallery', { animation: 'slideIn'});
+</script>
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="content">
+	<div class="jumbotron-list">
+		{% for post in post %}
+		<div class="container">
+		<table>
+			<tr>
+				<td>
+					<h1 style="font-family: 'Baloo Bhai', cursive;" style="font-size: 45px;"><a href="{% url 'post:detail' post.pk %}">{{post.title}}</a></h1>
+					<p style="font-family: 'Times New Roman', serif;">{{post.snippet}}</p>
+					<p style="font-family: 'Bungee Inline', cursive; font-size: 15px;">{{post.date}}</p>
+					<p class="author">Added by {{ post.author.username }}</p>
+				</td>
+				<td>
+					<a href="{% url 'post:detail' post.pk %}"><img src="{{post.thumb.url}}" width="300" height="150"></a>
+				</td>
+			</tr>
+		</table>
+		</div>
+			
+		{% endfor %}
+	</div>	
+</div>
+
+{% endblock %}

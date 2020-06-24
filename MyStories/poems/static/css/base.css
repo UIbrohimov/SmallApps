@@ -1,0 +1,152 @@
+
+
+.col-sm{
+    text-align: end;
+}
+
+.fa-angle-right{
+    background-color: aquamarine;
+    border-radius: 60%;
+    padding: 10px;
+}
+
+.fa-angle-left{
+    background-color: aquamarine;
+    border-radius: 60%;
+    padding: 10px;
+}
+
+
+.header{
+    position: fixed;
+    display: inline-block;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+}
+/* ///////////// post share html editing //////////// */
+.jumbotron{
+    text-align: center;
+    margin-top: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.jumbotron input[type=email]{
+    width: 200px;
+    border: none;
+    margin-left: 10px;
+    border-radius: 2%;
+    background: darkseagreen;
+}
+.jumbotron input[name=name]{
+    width: 200px;
+    border: none;
+    border-radius: 2%;
+    background: darkseagreen;
+    margin-left: 5px;
+}
+.jumbotron input[name=to]{
+    width: 200px;
+    border: none;
+    border-radius: 2%;
+    background: darkseagreen;
+    margin-left: 30px;
+}
+.jumbotron textarea{
+    background: darkseagreen;
+    height: 100px;
+    margin-right: 25px;
+
+    border: none;
+}
+
+
+/* ///////////// post share html editing //////////// */
+
+
+
+.justify-content-md-center{
+    margin-top: 70px;
+}
+
+.blog-posts .title{
+    margin-left: 30px;
+    margin-top: 15px;
+
+}
+
+body{
+    background-image: url(../../media/back.png);
+}
+
+.detail{
+    margin-top: 60px;
+}
+
+/* ############ login.html and signup.html editing ############ */
+
+.content{
+    margin-top: 70px;
+    margin-bottom: 30px;
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin-left: 30px;
+}
+.content h1{
+    margin-bottom: 70px;
+}
+
+.content input{
+    border: none;
+    background-color: blue;
+    width: 100px;
+    height: 50px;
+    border-radius: 4%;
+    margin-bottom: 5px;
+    color: aliceblue;
+    font-family: 'Concert One', cursive;
+    font-size: 150%;
+}    
+    
+
+.content input[name=username]{
+    background: none;
+    border: none;
+    width: 200px;
+    margin-left: 3px;
+    color: black;
+    font-size: 100%;
+
+}
+.content input[name=password]{
+    background: none;
+    border: none;
+    width: 200px;
+    margin-left: 10px;
+    font-size: 100%;
+    margin-bottom: 50px;
+    color: black;
+}
+
+.content label{
+    font-family: 'Righteous', cursive;
+    font-size: 120%;
+}
+
+    /* #################### fonts ################# */
+
+
+    /* font-family: 'Righteous', cursive;
+    font-family: 'Fredoka One', cursive;
+    font-family: 'Concert One', cursive;
+    font-family: 'Changa', sans-serif;
+    font-family: 'Amaranth', sans-serif;
+ */
+
+
+
+
+
+
+

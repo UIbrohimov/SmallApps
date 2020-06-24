@@ -1,0 +1,255 @@
+
+.content{
+    font-family: 'McLaren', cursive;
+    height: 100vh;
+}
+
+
+.navbar-container{
+    position: fixed;
+    display: inline-block;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+}
+
+.jumbotron{
+    /* background-image: url(../images/best.jpg); */
+    height: 80vh;
+    overflow: auto;
+    padding: 4rem 2rem;
+    margin-bottom: 2rem;
+    background-color: #e9ecef;
+    border-radius: .3rem;
+    box-sizing: border-box;
+    text-align: right;
+    margin-top: 77px;
+
+}
+
+.detail{
+    text-align: center;
+}
+
+
+form input{
+    border-style: solid;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 20px;
+}
+
+.site-form textarea{
+    height: 100px;
+}
+
+table{
+    margin: auto;
+}
+
+table tr td{
+    width: 50%;
+    padding: 10px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+
+table tr td img{
+    float: left;
+    border-radius: 4%;
+}
+
+.signup-content h1{
+    text-align: center;
+    margin: 15px;
+}
+
+.signup-content{
+    text-align: left;
+}
+
+/* 
+font-family: 'Orbitron', sans-serif;
+font-family: 'Monoton', cursive;
+font-family: 'Baloo', cursive;
+font-family: 'Bad Script', cursive; */
+
+.navbar-expand-sm{
+    font-family: 'Baloo Bhai', cursive;
+    
+}
+
+
+.ml-auto{
+    justify-self: end;
+}
+
+.nav-item a{
+    cursor: default;
+}
+
+
+.logout-link button{
+    cursor: pointer;
+    background: none;
+    color: deepskyblue;
+    border: 0;
+}
+
+.content .jumbotron .container{
+    border: groove;
+
+}
+
+
+.author{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-underline-position: auto;
+}
+
+.site-form{
+    border: 1px solid #00dba0;
+    display: block;
+    padding: 10px;
+    margin: 10px 0 0;
+}
+
+
+.admin{
+    color: floralwhite;
+}
+
+.signing{
+    color: floralwhite;
+}
+
+.logging{
+    color: floralwhite;
+}
+
+.nav-item .new{
+    border: outset 1px;
+    border-color: #00dba0;
+    color: #00dba0;
+    font-family: monospace;
+    display: inline;
+    border-radius: 5%;
+
+}
+
+.detail h2{
+    margin: 20px auto;
+    font-size: 2em;
+    
+}
+
+.background{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    background-image: url(../images/back.jpg);
+    background-size: cover;
+    z-index: -1;
+}
+
+/* z-index positon under elements
+it takes an indexes than tells us who at the bottom and who at the top  */
+
+ul .errorlist{
+    color: #bb0000;
+    border: double red;
+    font-family: monospace;
+}
+
+.add{
+    margin-top: 3px;
+    padding: 4px;
+}
+
+.site-form .post{
+    background-color: #32d63cdb;
+    color: white;
+}
+
+.jumbotron-signup .site-form .errorlist{
+    color: red;
+    font-family: monospace;
+}
+
+.jumbotron-signup .site-form input{
+    text-align: center;
+    background-color: lightgreen;
+    color: white;
+    align-self: center;
+}
+
+/* .Login .site-form input{
+    margin-bottom: 4px;
+} */
+
+.jumbotron-login{
+    margin-top: 250px;
+    text-align: center;
+    font-family: 'Baloo', cursive;
+}
+
+.jumbotron-login .site-form input{
+    margin-bottom: 4px;
+    background-color: darkolivegreen;
+    border-color: darkolivegreen;
+    border-radius: 3%;
+    color: white;
+}
+
+.site-form input{
+    border: none;
+}
+
+.jumbotron-addnew{
+    margin-top: 250px;
+    text-align: center;
+
+}
+
+.jumbotron-addnew .post{
+    border-color: rgb(145, 223, 11);
+}
+
+.jumbotron-addnew input{
+    background: none;
+}
+.jumbotron-addnew textarea{
+    background: none;
+}
+.jumbotron-addnew .site-form label{
+    font-family: 'Baloo', cursive;
+}
+
+.jumbotron-signup{
+    margin-top: 250px;
+    text-align: left;
+    font-family: 'Baloo', cursive;
+}
+
+.jumbotron-list .container{
+    text-align: right;
+}
+
+.jumbotron-list{
+    margin-top: 250px;
+}
+
+.jumbotron-detail img{
+    width: 100%;
+    height: auto;
+    
+}
+
+
+.jumbotron-detail{
+    text-align: center;
+    font-family: 'Baloo', cursive;
+    margin-top: 250px;
+}

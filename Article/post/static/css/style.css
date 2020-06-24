@@ -1,0 +1,27 @@
+.jumbotron{
+    text-align: center;
+}
+
+.container{
+    font-family: 'McLaren', cursive;
+
+}
+
+.jumbotron{
+    background-image: url(../images/dhin.png);
+    background-color: yellow;
+    font-style: oblique, red;
+
+}
+
+.navbar-expand-sm{
+    font-family: 'Julius Sans One', sans-serif;
+    background-image: url(../images/sky.jpg);
+    background-color: black;
+}
+
+body{
+    background-color: blue;
+    background-image: url(../images/kim.jpg);
+
+}

@@ -1,0 +1,111 @@
+{% extends 'base.html' %}
+{% load blog_tags %}
+{% load staticfiles %}
+{% block content %}
+<div class="container">
+    <div class="row">
+      <!-- Latest Posts -->
+      <main class="posts-listing col-lg-8"> 
+        <div class="container">
+          <div class="row">
+            <!-- post -->
+            {% for post in object_list %}
+            <div class="post col-xl-6">
+              <!-- <div class="post-thumbnail"><a href="{{{% url 'poems:post_detail' post.id %}}}"><img src="{{post.thumb.url}}" alt="..." class="img-fluid"></a></div> -->
+              <div class="post-details">
+                <div class="post-meta d-flex justify-content-between">
+                  <!-- <div class="date meta-last">{{post.date}}</div> -->
+                  <!-- <div class="category"><a href="{% url 'poems:post_detail' post.id %}">{{post.title}}</a></div> -->
+                </div><a href="{% url 'poems:post_detail' post.id %}">
+                  <h3 class="h4">Meet the beutiful post: {{post.title}}</h3></a>
+                <p class="text">{{post.body|markdown|truncatechars_html:30}}</p>
+                <footer class="post-footer d-flex align-items-center">
+                    <div class="avatar"><img src="{% static 'img/user.jpg' %}" width="25" height="25"></div>
+                    <div class="title"><span>{{post.author.username}}</span></div>
+                    <div class="date"><i class="icon-clock"></i></div>
+                    <div class="comments meta-last"><i class="icon-comment"></i></div>
+                </footer>
+              </div>
+            </div>
+            {% endfor %}
+     
+          <!-- Pagination -->
+          <nav aria-label="Page navigation example">
+            <ul class="pagination pagination-template d-flex justify-content-center">
+        
+            {% include 'pagination.html' with page=page_obj %}
+             
+            </ul>
+          </nav>
+        </div>
+      </main>
+      <aside class="col-lg-4">
+        <!-- Widget [Search Bar Widget]-->
+        <div class="widget search">
+          <header>
+            <h3 class="h6">Search the blog</h3>
+          </header>
+          
+            <div class="form-group">
+              <p>Search through {% total_posts %} posts!</p>
+              <form action="{% url 'poems:post_list' %}" method="get">
+                <input name='q' type="text" placeholder="What are you looking for?">
+                <!-- <button type="submit" class="submit"><i class="icon-search"></i></button> -->
+              </form>
+            </div>
+          
+        </div>
+        <!-- Widget [Latest Posts Widget]        -->
+        <div class="widget latest-posts">
+          <header>
+            <h3 class="h6">Latest Posts</h3>
+          </header>
+          <div class="blog-posts">
+              <div class="item d-flex align-items-center">
+                <img src="{% static 'img/clock.png' %}" width="80" height="80" class="img-fluid">
+                <div class="title">
+                  <strong>{% show_latest_posts %}</strong>
+                  <div class="d-flex align-items-center">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+        </div>
+        <!-- Widget [Categories Widget]-->
+        <div class="widget categories">
+          <header>
+            <h3 class="h6">Most commented posts</h3>
+          </header>
+          {% get_most_commented_posts as most_commented_posts %}
+          {% for post in most_commented_posts %}
+          <div class="item d-flex justify-content-between">
+            <a href="{% url 'poems:post_detail' post.id %}">{{post.title}}</a>
+          </div>
+          {% endfor %}
+        </div>
+        <!-- Widget [Tags Cloud Widget]-->
+        <div class="widget tags">       
+          <header>
+            <h3 class="h6">Create your account and publish awesome articles...</h3>
+          </header>
+          <ul class="list-inline">
+            <li class="list-inline-item">
+              <a href="#" class="tag">Login</a>
+              <p><strong>And take full access to the site! </strong></p>
+            </li>
+            <li class="list-inline-item">
+              <a href="#" class="tag">Sign In</a>
+              <p><strong>If you don't have an account yet! </strong></p>
+            </li>
+    
+          </ul>
+        </div>
+      </aside>
+    </div>
+    <div class="container">
+      {% latest_photos %}
+    </div>
+  </div>
+
+{% endblock %}

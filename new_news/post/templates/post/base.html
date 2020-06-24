@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+	<link href="https://fonts.googleapis.com/css?family=Fjalla+One&display=swap" rel="stylesheet">
+
+	<link href="https://fonts.googleapis.com/css?family=Bungee+Inline|Noto+Serif+TC&display=swap" rel="stylesheet">
+
+	<link href="https://fonts.googleapis.com/css?family=Bungee+Inline&display=swap" rel="stylesheet">
+
+	<link href="https://fonts.googleapis.com/css?family=Bad+Script|Baloo|Baloo+Bhai|Monoton|Orbitron&display=swap" rel="stylesheet">
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</head>
+<body>
+	<!-- A grey horizontal navbar that becomes vertical on small screens -->
+	<div class="navbar-container">
+		<nav class="navbar navbar-expand-sm bg-none">
+
+			<!-- Links -->
+			<ul class="navbar-nav" style="font-size: 30px; font-family: 'Fjalla One', sans-serif;">
+			 <li class="nav-item">
+				<a class="nav-link" href="{% url 'post:list_view' %}"><img src="{% static 'images/home.png' %}" width="50" height="50" /></a>
+			 </li>
+			 <li class="nav-item add">
+				<a class="nav-link new" href="{% url 'post:create' %}">ADD NEW</a>
+	    	 </li>
+			 
+			  
+			 <li class="nav-item">
+			  <a class="nav-link admin" href="{% url 'admin:index' %}">ADMIN</a>
+			</li>
+			
+			</ul>
+			<ul class="navbar-nav ml-auto">
+			 {% if user.is_authenticated %}
+			 <li>
+    		  <form class="logout-link" method="post" action="{% url 'accounts:logout' %}">
+				{% csrf_token %}
+				<button type="submit"><img src="{% static 'images/user.png' %}" width="40" height="40" />LOGOUT</button>
+			  </form>
+			 </li>
+			 {% else %}
+			  <li class="nav-item">
+				<a class="nav-link logging" href="{% url 'accounts:login' %}"><img src="{% static 'images/user.png' %}" width="50" height="50" />LOGIN</a>
+			  </li>
+			  <li class="nav-item">
+				<a class="nav-link signing" href="{% url 'accounts:signup' %}"><img src="{% static 'images/sign.png' %}" width="50" height="50">SIGNUP</a>
+			  </li>
+			  
+			 {% endif %}
+			</ul>
+		</nav>
+	</div>
+	<div class="background">
+		
+	</div>
+
+	{% block content %}
+
+	{% endblock %}
+
+</body>
+</html>
